@@ -177,10 +177,13 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\GvrCursorHelper.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+     <Compile Include="Assets\ModernSupermarket\Scripts\FreeCamera.cs" />
      <Compile Include="Assets\RainbowLi\Scripts\BezierPointer.cs" />
      <Compile Include="Assets\RainbowLi\Scripts\Transport.cs" />
+     <None Include="Assets\ModernSupermarket\Shaders\MaskedColor.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
+     <None Include="Assets\ModernSupermarket\Shaders\Glass.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
      <None Include="Assets\GoogleVR\Beta\Shaders\GvrSeeThroughUI.shader" />
@@ -193,7 +196,10 @@
      <None Include="Assets\GoogleVR\Demos\Shaders\HelloVR\HelloVRUnlitGrayscaleToColor.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrReticleShader.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlay.shader" />
+     <None Include="Assets\ModernSupermarket\Shaders\Liquid.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
+     <None Include="Assets\ModernSupermarket\Shaders\Label.shader" />
+     <None Include="Assets\ModernSupermarket\Shaders\Tesselation.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Cardboard.xml" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>F:/Vitrual/SuperMarket_Remake/SuperMarket_Remake/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
