@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: e60deb1e1f646b04581f3a6f480d8ced
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Round Button
+    100004: Round Button.001
+    100006: Round Button.002
+    100008: Round Button.003
+    100010: Screen
+    100012: Square Button
+    100014: Square Button.001
+    100016: Square Button.002
+    100018: Square Button.003
+    100020: "\u5E73\u9762"
+    100022: "\u67F1\u4F53"
+    100024: "\u67F1\u4F53.001"
+    100026: "\u67F1\u4F53.002"
+    100028: "\u67F1\u4F53.003"
+    100030: "\u67F1\u4F53.004"
+    100032: "\u67F1\u4F53.005"
+    100034: "\u67F1\u4F53.006"
+    100036: "\u67F1\u4F53.007"
+    100038: "\u67F1\u4F53.008"
+    100040: "\u67F1\u4F53.009"
+    100042: "\u67F1\u4F53.010"
+    100044: "\u67F1\u4F53.011"
+    100046: "\u7ACB\u65B9\u4F53"
+    100048: "\u7ACB\u65B9\u4F53.001"
+    100050: "\u7ACB\u65B9\u4F53.002"
+    400000: //RootNode
+    400002: Round Button
+    400004: Round Button.001
+    400006: Round Button.002
+    400008: Round Button.003
+    400010: Screen
+    400012: Square Button
+    400014: Square Button.001
+    400016: Square Button.002
+    400018: Square Button.003
+    400020: "\u5E73\u9762"
+    400022: "\u67F1\u4F53"
+    400024: "\u67F1\u4F53.001"
+    400026: "\u67F1\u4F53.002"
+    400028: "\u67F1\u4F53.003"
+    400030: "\u67F1\u4F53.004"
+    400032: "\u67F1\u4F53.005"
+    400034: "\u67F1\u4F53.006"
+    400036: "\u67F1\u4F53.007"
+    400038: "\u67F1\u4F53.008"
+    400040: "\u67F1\u4F53.009"
+    400042: "\u67F1\u4F53.010"
+    400044: "\u67F1\u4F53.011"
+    400046: "\u7ACB\u65B9\u4F53"
+    400048: "\u7ACB\u65B9\u4F53.001"
+    400050: "\u7ACB\u65B9\u4F53.002"
+    2100000: "\u6750\u8D28.004"
+    2100002: "\u6750\u8D28.001"
+    2100004: "\u6750\u8D28.002"
+    2100006: "\u6750\u8D28.003"
+    2100008: "\u6750\u8D28.008"
+    2100010: "\u6750\u8D28.007"
+    2100012: "\u6750\u8D28.006"
+    2100014: num
+    2100016: "\u6750\u8D28.012"
+    2100018: "\u6750\u8D28.010"
+    2100020: "\u6750\u8D28.009"
+    2100022: "\u6750\u8D28.014"
+    2100024: cash
+    2100026: "\u6750\u8D28.017"
+    2100028: "\u6750\u8D28.020"
+    2100030: "\u6750\u8D28.021"
+    2100032: "\u6750\u8D28.022"
+    2100034: "\u6750\u8D28.015"
+    2100036: "\u6750\u8D28.016"
+    2100038: "\u6750\u8D28.018"
+    2100040: "\u6750\u8D28.019"
+    2100042: "\u6750\u8D28.005"
+    2100044: Image
+    2300000: Round Button
+    2300002: Round Button.001
+    2300004: Round Button.002
+    2300006: Round Button.003
+    2300008: Screen
+    2300010: Square Button
+    2300012: Square Button.001
+    2300014: Square Button.002
+    2300016: Square Button.003
+    2300018: "\u5E73\u9762"
+    2300020: "\u67F1\u4F53"
+    2300022: "\u67F1\u4F53.001"
+    2300024: "\u67F1\u4F53.002"
+    2300026: "\u67F1\u4F53.003"
+    2300028: "\u67F1\u4F53.004"
+    2300030: "\u67F1\u4F53.005"
+    2300032: "\u67F1\u4F53.006"
+    2300034: "\u67F1\u4F53.007"
+    2300036: "\u67F1\u4F53.008"
+    2300038: "\u67F1\u4F53.009"
+    2300040: "\u67F1\u4F53.010"
+    2300042: "\u67F1\u4F53.011"
+    2300044: "\u7ACB\u65B9\u4F53"
+    2300046: "\u7ACB\u65B9\u4F53.001"
+    2300048: "\u7ACB\u65B9\u4F53.002"
+    3300000: Round Button
+    3300002: Round Button.001
+    3300004: Round Button.002
+    3300006: Round Button.003
+    3300008: Screen
+    3300010: Square Button
+    3300012: Square Button.001
+    3300014: Square Button.002
+    3300016: Square Button.003
+    3300018: "\u5E73\u9762"
+    3300020: "\u67F1\u4F53"
+    3300022: "\u67F1\u4F53.001"
+    3300024: "\u67F1\u4F53.002"
+    3300026: "\u67F1\u4F53.003"
+    3300028: "\u67F1\u4F53.004"
+    3300030: "\u67F1\u4F53.005"
+    3300032: "\u67F1\u4F53.006"
+    3300034: "\u67F1\u4F53.007"
+    3300036: "\u67F1\u4F53.008"
+    3300038: "\u67F1\u4F53.009"
+    3300040: "\u67F1\u4F53.010"
+    3300042: "\u67F1\u4F53.011"
+    3300044: "\u7ACB\u65B9\u4F53"
+    3300046: "\u7ACB\u65B9\u4F53.001"
+    3300048: "\u7ACB\u65B9\u4F53.002"
+    4300000: "\u7ACB\u65B9\u4F53"
+    4300002: "\u7ACB\u65B9\u4F53.001"
+    4300004: "\u67F1\u4F53"
+    4300006: "\u67F1\u4F53.001"
+    4300008: "\u7ACB\u65B9\u4F53.002"
+    4300010: "\u67F1\u4F53.002"
+    4300012: "\u67F1\u4F53.003"
+    4300014: "\u67F1\u4F53.004"
+    4300016: "\u67F1\u4F53.005"
+    4300018: "\u67F1\u4F53.006"
+    4300020: "\u67F1\u4F53.007"
+    4300022: "\u67F1\u4F53.008"
+    4300024: "\u5E73\u9762"
+    4300026: "\u67F1\u4F53.009"
+    4300028: "\u67F1\u4F53.010"
+    4300030: "\u67F1\u4F53.011"
+    4300032: Square Button
+    4300034: Round Button
+    4300036: Round Button.001
+    4300038: Round Button.002
+    4300040: Round Button.003
+    4300042: Square Button.001
+    4300044: Square Button.002
+    4300046: Square Button.003
+    4300048: Screen
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

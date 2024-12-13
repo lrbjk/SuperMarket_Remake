@@ -18,7 +18,7 @@ public class BezierPointer : MonoBehaviour
 
     void Update()
     {
-        DrawBezierCurve();
+        //DrawBezierCurve();
         // 可添加其他控制光标的逻辑
     }
 
