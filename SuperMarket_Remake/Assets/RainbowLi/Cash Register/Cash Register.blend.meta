@@ -3,6 +3,163 @@ guid: dc8f6573b6481694aaccda5697d5a09d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: Light
+    100006: Round Button
+    100008: Round Button.001
+    100010: Round Button.002
+    100012: Round Button.003
+    100014: Screen
+    100016: Square Button
+    100018: Square Button.001
+    100020: Square Button.002
+    100022: Square Button.003
+    100024: "\u5E73\u9762"
+    100026: "\u67F1\u4F53"
+    100028: "\u67F1\u4F53.001"
+    100030: "\u67F1\u4F53.002"
+    100032: "\u67F1\u4F53.003"
+    100034: "\u67F1\u4F53.004"
+    100036: "\u67F1\u4F53.005"
+    100038: "\u67F1\u4F53.006"
+    100040: "\u67F1\u4F53.007"
+    100042: "\u67F1\u4F53.008"
+    100044: "\u67F1\u4F53.009"
+    100046: "\u67F1\u4F53.010"
+    100048: "\u67F1\u4F53.011"
+    100050: "\u7ACB\u65B9\u4F53"
+    100052: "\u7ACB\u65B9\u4F53.001"
+    100054: "\u7ACB\u65B9\u4F53.002"
+    400000: Camera
+    400002: //RootNode
+    400004: Light
+    400006: Round Button
+    400008: Round Button.001
+    400010: Round Button.002
+    400012: Round Button.003
+    400014: Screen
+    400016: Square Button
+    400018: Square Button.001
+    400020: Square Button.002
+    400022: Square Button.003
+    400024: "\u5E73\u9762"
+    400026: "\u67F1\u4F53"
+    400028: "\u67F1\u4F53.001"
+    400030: "\u67F1\u4F53.002"
+    400032: "\u67F1\u4F53.003"
+    400034: "\u67F1\u4F53.004"
+    400036: "\u67F1\u4F53.005"
+    400038: "\u67F1\u4F53.006"
+    400040: "\u67F1\u4F53.007"
+    400042: "\u67F1\u4F53.008"
+    400044: "\u67F1\u4F53.009"
+    400046: "\u67F1\u4F53.010"
+    400048: "\u67F1\u4F53.011"
+    400050: "\u7ACB\u65B9\u4F53"
+    400052: "\u7ACB\u65B9\u4F53.001"
+    400054: "\u7ACB\u65B9\u4F53.002"
+    2000000: Camera
+    2100000: "\u6750\u8D28.004"
+    2100002: "\u6750\u8D28.001"
+    2100004: "\u6750\u8D28.002"
+    2100006: "\u6750\u8D28.003"
+    2100008: "\u6750\u8D28.008"
+    2100010: "\u6750\u8D28.007"
+    2100012: "\u6750\u8D28.006"
+    2100014: num
+    2100016: "\u6750\u8D28.012"
+    2100018: "\u6750\u8D28.010"
+    2100020: "\u6750\u8D28.009"
+    2100022: "\u6750\u8D28.014"
+    2100024: cash
+    2100026: "\u6750\u8D28.017"
+    2100028: "\u6750\u8D28.020"
+    2100030: "\u6750\u8D28.021"
+    2100032: "\u6750\u8D28.022"
+    2100034: "\u6750\u8D28.015"
+    2100036: "\u6750\u8D28.016"
+    2100038: "\u6750\u8D28.018"
+    2100040: "\u6750\u8D28.019"
+    2100042: "\u6750\u8D28.005"
+    2100044: Image
+    2300000: Round Button
+    2300002: Round Button.001
+    2300004: Round Button.002
+    2300006: Round Button.003
+    2300008: Screen
+    2300010: Square Button
+    2300012: Square Button.001
+    2300014: Square Button.002
+    2300016: Square Button.003
+    2300018: "\u5E73\u9762"
+    2300020: "\u67F1\u4F53"
+    2300022: "\u67F1\u4F53.001"
+    2300024: "\u67F1\u4F53.002"
+    2300026: "\u67F1\u4F53.003"
+    2300028: "\u67F1\u4F53.004"
+    2300030: "\u67F1\u4F53.005"
+    2300032: "\u67F1\u4F53.006"
+    2300034: "\u67F1\u4F53.007"
+    2300036: "\u67F1\u4F53.008"
+    2300038: "\u67F1\u4F53.009"
+    2300040: "\u67F1\u4F53.010"
+    2300042: "\u67F1\u4F53.011"
+    2300044: "\u7ACB\u65B9\u4F53"
+    2300046: "\u7ACB\u65B9\u4F53.001"
+    2300048: "\u7ACB\u65B9\u4F53.002"
+    3300000: Round Button
+    3300002: Round Button.001
+    3300004: Round Button.002
+    3300006: Round Button.003
+    3300008: Screen
+    3300010: Square Button
+    3300012: Square Button.001
+    3300014: Square Button.002
+    3300016: Square Button.003
+    3300018: "\u5E73\u9762"
+    3300020: "\u67F1\u4F53"
+    3300022: "\u67F1\u4F53.001"
+    3300024: "\u67F1\u4F53.002"
+    3300026: "\u67F1\u4F53.003"
+    3300028: "\u67F1\u4F53.004"
+    3300030: "\u67F1\u4F53.005"
+    3300032: "\u67F1\u4F53.006"
+    3300034: "\u67F1\u4F53.007"
+    3300036: "\u67F1\u4F53.008"
+    3300038: "\u67F1\u4F53.009"
+    3300040: "\u67F1\u4F53.010"
+    3300042: "\u67F1\u4F53.011"
+    3300044: "\u7ACB\u65B9\u4F53"
+    3300046: "\u7ACB\u65B9\u4F53.001"
+    3300048: "\u7ACB\u65B9\u4F53.002"
+    4300000: "\u7ACB\u65B9\u4F53"
+    4300002: "\u7ACB\u65B9\u4F53.001"
+    4300004: "\u67F1\u4F53"
+    4300006: "\u67F1\u4F53.001"
+    4300008: "\u7ACB\u65B9\u4F53.002"
+    4300010: "\u67F1\u4F53.002"
+    4300012: "\u67F1\u4F53.003"
+    4300014: "\u67F1\u4F53.004"
+    4300016: "\u67F1\u4F53.005"
+    4300018: "\u67F1\u4F53.006"
+    4300020: "\u67F1\u4F53.007"
+    4300022: "\u67F1\u4F53.008"
+    4300024: "\u5E73\u9762"
+    4300026: "\u67F1\u4F53.009"
+    4300028: "\u67F1\u4F53.010"
+    4300030: "\u67F1\u4F53.011"
+    4300032: Square Button
+    4300034: Round Button
+    4300036: Round Button.001
+    4300038: Round Button.002
+    4300040: Round Button.003
+    4300042: Square Button.001
+    4300044: Square Button.002
+    4300046: Square Button.003
+    4300048: Screen
+    9500000: //RootNode
+    10800000: Light
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +214,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
