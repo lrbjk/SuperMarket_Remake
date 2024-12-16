@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MGCA/SampleSupermarket.unity
+- path: Assets/MGCA/NewSupermarket.unity
   isLoaded: 1
   isActive: 1
