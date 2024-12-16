@@ -12,8 +12,8 @@ public class BezierPointer : MonoBehaviour
 
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = 100; // 增加点的数量来绘制曲线
+       // lineRenderer = GetComponent<LineRenderer>();
+       // lineRenderer.positionCount = 100; // 增加点的数量来绘制曲线
     }
 
     void Update()
