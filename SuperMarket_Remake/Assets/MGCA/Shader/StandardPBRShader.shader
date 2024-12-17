@@ -2,18 +2,20 @@
 {
     Properties
     {
-        _MainTex("BC",2D) = "white"
-        _Normal("N",2D) = "white"
-        _PBR("PBR",2D) = "black"
-        _AO("AO",2D) = "white"
-        _Alpha("A",2D) = "white"
-        _height("Height",2D) = "black"
-        _Emission("E",2D) = "black"
+        _MainTex("BC",2D) = "white"{}
+        _Normal("N",2D) = "white"{}
+        _PBR("PBR",2D) = "black"{}
+        _AO("AO",2D) = "white"{}
+        _Alpha("A",2D) = "white"{}
+        _height("Height",2D) = "black"{}
+        _Emission("E",2D) = "black"{}
+        _Roughness("R",2D) = "black"{}
+        _Color("Color",Color) = (1,1,1,1)
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 200
+        LOD 100
  
         CGPROGRAM
         #include "UnityCG.cginc"
@@ -29,6 +31,9 @@
         sampler2D _Alpha;
         sampler2D _height;
         sampler2D _Emission;
+        sampler2D _Roughness;
+
+        half4 _Color;
  
         struct Input
         {
@@ -49,12 +54,12 @@
         // The Surface Shader function
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            half4 albedo = tex2D (_MainTex, IN.uv_MainTex);
+            half4 albedo = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             float4 PBR = tex2D(_PBR,IN.uv_PBR);
             o.Albedo = albedo.rgb ;
-            o.Metallic = PBR.r;
-            o.Smoothness = PBR.g * PBR.b;
-            o.Occlusion = tex2D(_AO,IN.uv_AO).r;
+            o.Metallic = PBR.b;
+            o.Smoothness = max(PBR.g * PBR.b + tex2D(_Roughness,IN.uv_PBR)-0.2,0);
+            o.Occlusion = PBR.r + tex2D(_AO,IN.uv_AO);
             o.Normal = UnpackNormal(tex2D(_Normal,IN.uv_Normal));
             o.Alpha = tex2D(_Alpha,IN.uv_Alpha).r;
             o.Emission = tex2D(_Emission,IN.uv_Emission);
