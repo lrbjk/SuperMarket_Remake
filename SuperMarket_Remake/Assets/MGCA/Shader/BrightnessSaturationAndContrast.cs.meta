@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ef07361df0985ed4292aa6d279661499
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ColorTintShader: {fileID: 4800000, guid: 8e2db7b7a39ee6941a7c0751ea2bd5db, type: 3}
+  - mainCamera: {instanceID: 0}
+  - _VolumeTex: {fileID: 11700000, guid: 26e4589695f5a484c91ef34358f17299, type: 2}
+  - _WeatherMap: {fileID: 2800000, guid: eec741b34dcb67d478febf20f989f42d, type: 3}
+  - _BlueNoise: {fileID: 2800000, guid: 756fc66ed3b129f448f913501c31eb7d, type: 3}
+  - _noiseTex: {fileID: 11700000, guid: 26e4589695f5a484c91ef34358f17299, type: 2}
+  - _noiseDetail3D: {fileID: 11700000, guid: bb9f4493220b05241967bc9eb45d9a6f, type: 2}
+  - _maskNoise: {fileID: 2800000, guid: 289983b211013994ea9965cdad6d2196, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
