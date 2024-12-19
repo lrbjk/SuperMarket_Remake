@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MGCA/NewSupermarket.unity
+    guid: 26b483a8562b1834c8aed05061620323
   m_configObjects: {}
