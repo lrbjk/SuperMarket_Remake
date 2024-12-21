@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class post_suface : MonoBehaviour
 {
     public Material material;
@@ -20,6 +20,8 @@ public class post_suface : MonoBehaviour
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        Graphics.Blit(source, destination,material);
+        RenderTexture RT1 = RenderTexture.GetTemporary(source.width, source.height, 0, source.format);
+        Graphics.Blit(source, RT1,material,0);
+        Graphics.Blit(RT1, destination,material,1);
     }
 }

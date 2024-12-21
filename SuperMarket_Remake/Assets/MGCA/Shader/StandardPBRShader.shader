@@ -49,7 +49,7 @@
         
         void myvert(inout appdata_full v,Input IN)
         {
-            v.vertex.xyz += tex2Dlod(_height,float4(IN.uv_height,0,0));
+            v.vertex.xyz += tex2Dlod(_height,float4(IN.uv_height,0,0)).r * v.normal;
         }
  
         // The Surface Shader function
@@ -59,7 +59,7 @@
             float4 PBR = tex2D(_PBR,IN.uv_PBR);
             o.Albedo = albedo.rgb ;
             o.Metallic = PBR.b;
-            o.Smoothness = max(PBR.g * PBR.b + tex2D(_Roughness,IN.uv_PBR)-0.2,0);
+            o.Smoothness = max(PBR.g + tex2D(_Roughness,IN.uv_PBR)-0.2,0);
             o.Occlusion = PBR.r + tex2D(_AO,IN.uv_AO);
             o.Normal = UnpackNormal(tex2D(_Normal,IN.uv_Normal));
             o.Alpha = tex2D(_Alpha,IN.uv_Alpha).r;

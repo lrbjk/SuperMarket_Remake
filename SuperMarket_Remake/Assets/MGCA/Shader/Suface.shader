@@ -8,6 +8,7 @@ Shader"suface"
     {
         _MainTex("Main",2D) = "white"{}
         _OutlineWidth("OutlineWidth",Float) = 1
+        _hsv("hsv",Vector)=(1,1,1,1) 
     }
     
     SubShader
@@ -16,7 +17,6 @@ Shader"suface"
         
         Pass
         {
-//            Tags {"LightMode" = "For"}
             
             CGPROGRAM
             #pragma target 4.0
@@ -102,6 +102,120 @@ Shader"suface"
 
 
 
+            
+            ENDCG
+        }
+
+        Pass
+        {
+            Name "ERCIYUAN"
+            
+            CGPROGRAM
+            #include "UnityCG.cginc"
+
+            #pragma vertex vert
+            #pragma fragment frag
+
+            sampler2D _MainTex;
+
+            float3 _hsv;
+
+            struct v2f
+            {
+                float2 uv : TEXCOORD0;
+                float4 pos : SV_POSITION;
+            };
+            
+
+            float3 RGBToHSV(float3 rgb)
+            {
+            
+                rgb = clamp(rgb, 0.0, 1.0);
+ 
+                float minVal = min(min(rgb.x, rgb.y), rgb.z);
+                float maxVal = max(max(rgb.x, rgb.y), rgb.z);
+                float delta = maxVal - minVal;
+ 
+                float h, s, v;
+ 
+                v = maxVal;
+ 
+                if (maxVal != 0.0)
+                s = delta / maxVal;
+                else
+                {
+                    s = 0.0;
+        
+                    h = -1.0;
+                    return float3(h, s, v);
+                }
+ 
+                if (rgb.x == maxVal)
+                    h = (rgb.y - rgb.z) / delta;
+                else if (rgb.y == maxVal)
+                    h = 2.0 + (rgb.z - rgb.x) / delta; 
+                else
+                    h = 4.0 + (rgb.x - rgb.y) / delta; 
+ 
+                h = h / 6.0; 
+                if (h < 0)
+                h += 1.0; 
+ 
+                return float3(h, s, v);
+            }
+
+            float3 HSVToRGB(float3 hsv)
+            {
+                hsv = clamp(hsv, 0.0, 1.0); 
+ 
+                float h = hsv.x * 6.0; 
+                float s = hsv.y;      
+                float v = hsv.z;     
+ 
+                float i = floor(h); 
+                float f = h - i;   
+                float p = v * (1.0 - s); 
+                float q = v * (1.0 - s * f); 
+                float t = v * (1.0 - s * (1.0 - f));
+ 
+                float3 rgb;
+     
+                if (i == 0) { rgb = float3(v, t, p); }
+                else if (i == 1) { rgb = float3(q, v, p); }
+                else if (i == 2) { rgb = float3(p, v, t); }
+                else if (i == 3) { rgb = float3(p, q, v); }
+                else if (i == 4) { rgb = float3(t, p, v); }
+                else { rgb = float3(v, p, q); }
+ 
+                return rgb;
+            }
+
+            v2f vert(appdata_base v)
+            {
+                v2f o;
+                o.uv = v.texcoord;
+                o.pos = UnityObjectToClipPos(v.vertex);
+                return o;
+            }
+
+            float4 frag(v2f i) : SV_Target
+            {
+                float3 base = tex2D(_MainTex,i.uv);
+                base = RGBToHSV(base);
+
+                float cutOUt = clamp(base.z-_hsv.z * base.z,0,1);
+                base = float3(clamp(base.x-_hsv.x * base.x,0,1),clamp(base.y-_hsv.y * base.y,0,1),clamp(base.z-_hsv.z * base.z,0,1));
+
+                
+                
+                base = HSVToRGB(base);
+
+                float3 finalBase = lerp(base,float3(1,1,1),smoothstep(0.4,0.75,cutOUt));
+                
+                float4 test = finalBase.xyzx;
+                return test;
+            }
+            
             
             ENDCG
         }
