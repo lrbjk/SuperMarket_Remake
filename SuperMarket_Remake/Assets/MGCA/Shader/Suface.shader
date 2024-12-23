@@ -8,12 +8,13 @@ Shader"suface"
     {
         _MainTex("Main",2D) = "white"{}
         _OutlineWidth("OutlineWidth",Float) = 1
-        _hsv("hsv",Vector)=(1,1,1,1) 
+        _hsv("hsv",Vector)=(1,1,1,1)
+        _MasekDark("_MasekDark",Float)=0.2
+        _MasekLight("_MasekLight",Float)=0.9
     }
     
     SubShader
     {
-        
         
         Pass
         {
@@ -120,6 +121,9 @@ Shader"suface"
 
             float3 _hsv;
 
+            half _MasekDark;
+            half _MasekLight;
+
             struct v2f
             {
                 float2 uv : TEXCOORD0;
@@ -190,6 +194,21 @@ Shader"suface"
                 return rgb;
             }
 
+            half3 colorGrade(half c,half3 abledo)
+            {
+                if(c < _MasekDark)
+                {
+                    return 0.8 * abledo;
+                }else if(c < _MasekLight)
+                {
+                    // return lerp(_MasekDark * abledo,_MasekLight*abledo,c/(_MasekLight-_MasekDark));
+                    return abledo;
+                }else
+                {
+                    return 1.2 * abledo;
+                }
+            }
+
             v2f vert(appdata_base v)
             {
                 v2f o;
@@ -201,19 +220,22 @@ Shader"suface"
             float4 frag(v2f i) : SV_Target
             {
                 float3 base = tex2D(_MainTex,i.uv);
-                base = RGBToHSV(base);
+                // base = RGBToHSV(base);
+                //
+                // float cutOUt = clamp(base.z-_hsv.z * base.z,0,1);
+                // base = float3(clamp(base.x-_hsv.x * base.x,0,1),clamp(base.y-_hsv.y * base.y,0,1),clamp(base.z-_hsv.z * base.z,0,1));
+                //
+                //
+                //
+                // base = HSVToRGB(base);
 
-                float cutOUt = clamp(base.z-_hsv.z * base.z,0,1);
-                base = float3(clamp(base.x-_hsv.x * base.x,0,1),clamp(base.y-_hsv.y * base.y,0,1),clamp(base.z-_hsv.z * base.z,0,1));
+                half4 finalColor;
+                finalColor.w =1;
+                finalColor.rgb = colorGrade(Luminance(base),base);
 
                 
                 
-                base = HSVToRGB(base);
-
-                float3 finalBase = lerp(base,float3(1,1,1),smoothstep(0.4,0.75,cutOUt));
-                
-                float4 test = finalBase.xyzx;
-                return test;
+                return finalColor;
             }
             
             

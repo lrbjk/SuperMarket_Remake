@@ -14,6 +14,7 @@
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
+        
 
         Pass
         {
@@ -39,6 +40,8 @@
 
             half3 _Color;
 
+
+
             struct v2f
             {
                 float4 pos : SV_POSITION;
@@ -60,23 +63,7 @@
                 return o;
             }
 
-            //替换fresnelTerm
-            float PHBeckmann(float NdotH, float m)
-            {
-                float alpha = acos(NdotH);
-                float ta = tan(alpha);
-                float val = 1 / (m*m*pow(NdotH,4.0))*exp(-(ta*ta)/m*m);
-            
-                return 0.5 * pow(val,0.1);
-            }
 
-            float fresnelReflectance(float3 H,float3 V,float F0)
-            {
-                float base = 1.0 - dot(H,V);
-                float exponential = pow(base,5.0);
-            
-                return exponential + F0 * (1.0 - exponential);
-            }
 
             half4 frag(v2f i,fixed facing : VFACE) : SV_Target
             {
@@ -86,40 +73,22 @@
                 worldLightDir.y = worldLightDir.y>0?worldLightDir.y:-worldLightDir.y;
                 float lightIntensity = lerp(1.2,0.8,(worldLightDir.y+1)*0.5); 
                 float3 halfDir = normalize(worldViewDir + worldLightDir);
-                float NdotL = saturate(dot(i.normal,halfDir));
-
-                
-                
-                half3 albedo = tex2D(_MainTex,i.uv).rgb * _Color;
-                half3 OSM = tex2D(_PBR,i.uv).rgb;
-                half roughness =1-( tex2D(_Roughness,i.uv).r + OSM.g);
-                half Metal = max(OSM.b,0.01);
-                half AO = tex2D(_AO,i.uv) * OSM.r;
-                half3 Emission = tex2D(_Emission,i.uv);
-                
+                float NdotL = dot(i.normal,worldLightDir);
                 UNITY_LIGHT_ATTENUATION(atten,i,i.posWS);
-                
-                half3 Diffuse = _LightColor0.rgb * pow((dot(i.normal,worldLightDir) * 0.5 + 0.5),roughness) * albedo ;
+                atten = facing>0?(atten + 0.4):1;
+
+                //--------------------------------------------------------
                 
 
-                half fresnel = saturate(1 - dot(worldViewDir,i.normal));
-                fresnel = smoothstep(0.6,0.7,fresnel);
-                float PH = pow(2.0 * PHBeckmann(NdotL,1-Metal),10.0);
-                float F = fresnelReflectance(halfDir,worldViewDir,0.028);
-                float frSpec = max(PH * F/dot(halfDir,halfDir),0);
-                float result = saturate(NdotL) * frSpec;//BRDF * dot(N,L) * rho_s
-                float3 finalSpecular = saturate(result * atten)*  _LightColor0 * albedo ;
+                half3 albedo = tex2D(_MainTex,i.uv);
+                half3 Diffuse = _LightColor0 * 1 * (NdotL * 0.5 + 0.5);
+                half3 Specular = _LightColor0 * 1 * max(0,dot(i.normal,halfDir));
 
-                atten = facing>0?(atten + 0.5):1; 
-                
-                
                 half4 finalColor;
-                finalColor.rgb = saturate(Diffuse + finalSpecular);
-                finalColor.rgb = finalColor * lightIntensity + Emission ;
-                finalColor.rgb *=  atten;
-                finalColor.w =1;
+                finalColor.rgb = clamp(Diffuse + Specular,0.2,1);
+                finalColor.rgb *= atten * albedo;
                 
-                return finalColor.xyzx;
+                return finalColor;
             }
 
             
@@ -171,7 +140,7 @@
                 return o;
             }
 
-            half4 frag(v2f i) : SV_Target
+            half4 frag(v2f i,fixed facing : VFACE) : SV_Target
             {
                 #ifdef USING_DIRECTIONAL_LIGHT
                     float3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
@@ -192,31 +161,24 @@
 
                 
                 float3 worldViewDir = normalize(UnityWorldSpaceViewDir(i.posWS));
+                worldLightDir.y = worldLightDir.y>0?worldLightDir.y:-worldLightDir.y;
+                float lightIntensity = lerp(1.2,0.8,(worldLightDir.y+1)*0.5); 
                 float3 halfDir = normalize(worldViewDir + worldLightDir);
-                
-                half3 albedo = tex2D(_MainTex,i.uv).rgb * _Color;
-                half3 OSM = tex2D(_PBR,i.uv).rgb;
-                half roughness = tex2D(_Roughness,i.uv).r + OSM.g;
-                half M = OSM.b;
-                half AO = tex2D(_AO,i.uv) * OSM.r;
-                half3 Emission = tex2D(_Emission,i.uv);
-                
-                
-                half3 Diffuse = _LightColor0.rgb * max(0,dot(i.normal,worldLightDir)) * OSM.g * 4;
+                float NdotL = dot(i.normal,worldLightDir);
+                atten = facing>0?(atten):1;
 
-                half fresnel = saturate(dot(worldViewDir,i.normal));
-                fresnel = smoothstep(0.5,0.8,fresnel) * roughness * 0.5;
-                half3 Specular = _LightColor0.rgb * pow(max(0,dot(i.normal,halfDir)) , OSM.b) * fresnel;
+                //--------------------------------------------------------
+                
 
-                
-                
-                
+                half3 albedo = tex2D(_MainTex,i.uv);
+                half3 Diffuse = _LightColor0 * 1 * (NdotL * 0.5 + 0.5);
+                half3 Specular = _LightColor0 * 1 * max(0,dot(i.normal,halfDir));
+
                 half4 finalColor;
-                finalColor.rgb = saturate(Diffuse) * albedo + Emission  ;
-                finalColor.rgb *=  AO * atten * 10;
-                finalColor.w =1;
-
-                return 0;
+                finalColor.rgb = clamp(Diffuse + Specular,0.2,1);
+                finalColor.rgb *= atten;
+                
+                return finalColor;
                 
             }
             

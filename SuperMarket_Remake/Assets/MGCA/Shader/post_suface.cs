@@ -23,5 +23,6 @@ public class post_suface : MonoBehaviour
         RenderTexture RT1 = RenderTexture.GetTemporary(source.width, source.height, 0, source.format);
         Graphics.Blit(source, RT1,material,0);
         Graphics.Blit(RT1, destination,material,1);
+        RT1.Release();
     }
 }
