@@ -5,6 +5,10 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public Transform player;
+    void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform.Find("Main Camera").Find("PickUpPoint").transform;
+    }
     public void PickUp()
     {
         transform.GetComponent<Rigidbody>().isKinematic = true;

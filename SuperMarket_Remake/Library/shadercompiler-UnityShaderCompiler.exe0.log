@@ -1,2 +1,71 @@
-Base path: D:/unity/2018.4.36f1/Editor/Data
+Base path: C:/Program Files/Unity/Hub/Editor/2018.4.36f1/Editor/Data
+Cmd: initializeCompiler
+Cmd: preprocess
+  insize=10891 outsize=6978 ok=1
+Cmd: preprocess
+  insize=1737 outsize=1081 ok=1
+Cmd: preprocess
+  insize=6128 outsize=5756 ok=1
+Cmd: preprocess
+  insize=2112 outsize=445 ok=1
+Cmd: preprocess
+  insize=1874 outsize=1078 ok=1
+Cmd: preprocess
+  insize=10493 outsize=9347 ok=1
+Cmd: preprocess
+  insize=3160 outsize=1801 ok=1
+Cmd: preprocess
+  insize=3412 outsize=1570 ok=1
+Cmd: preprocess
+  insize=3377 outsize=1313 ok=1
+Cmd: preprocess
+  insize=1665 outsize=984 ok=1
+Cmd: preprocess
+  insize=12020 outsize=6602 ok=1
+Cmd: preprocess
+  insize=1203 outsize=1203 ok=1
+Cmd: preprocess
+  insize=6555 outsize=929 ok=1
+Cmd: preprocess
+  insize=19150 outsize=11282 ok=1
+Cmd: preprocess
+  insize=6388 outsize=1848 ok=1
+Cmd: preprocess
+  insize=2026 outsize=1241 ok=1
+Cmd: preprocess
+  insize=1492 outsize=300 ok=1
+Cmd: preprocess
+  insize=1702 outsize=871 ok=1
+Cmd: preprocess
+  insize=7258 outsize=754 ok=1
+Cmd: preprocess
+  insize=1181 outsize=1181 ok=1
+Cmd: preprocess
+  insize=12149 outsize=633 ok=1
+Cmd: preprocess
+  insize=3207 outsize=1205 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2445 outsize=1350 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2445 outsize=998 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+Cmd: preprocess
+  error: 1 plat 21 at (24): Unrecognized #pragma surface directive: :myvert
+  error: 1 plat 21 at (24): Unrecognized #pragma surface directive: vertex
+  insize=2053 outsize=1398 ok=1
+Cmd: preprocess
+  insize=2510 outsize=682 ok=1
+Cmd: preprocess
+  insize=2011 outsize=1056 ok=1
+Cmd: preprocess
+  insize=6141 outsize=1540 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: initializeCompiler
