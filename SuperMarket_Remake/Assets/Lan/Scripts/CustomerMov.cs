@@ -10,6 +10,8 @@ public class CustomerMov : MonoBehaviour
     [Header("步进指令")]
     public string[] movIns;
 
+    private int lastIns;
+
     [Header("步进间隔时间")]
     public float movTime;
     private float _movTime;
@@ -21,6 +23,7 @@ public class CustomerMov : MonoBehaviour
     void Start()
     {
         nowIndex = 0;
+        lastIns = -1;
         _movTime = movTime;
         canMove = true;
     }
@@ -55,10 +58,10 @@ public class CustomerMov : MonoBehaviour
 
     void Move(){
         switch(movIns[nowIndex]){
-            case "A": {transform.position = new Vector3(transform.position.x + movDis, transform.position.y, transform.position.z);}break;
-            case "D": {transform.position = new Vector3(transform.position.x - movDis, transform.position.y, transform.position.z);}break;
-            case "S": {transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movDis);}break;
-            case "W": {transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movDis);}break;
+            case "A": {if(lastIns!=0){transform.localRotation = Quaternion.Euler(0, 90, 0);}transform.position = new Vector3(transform.position.x + movDis, transform.position.y, transform.position.z);lastIns = 0;}break;
+            case "D": {if(lastIns!=1){transform.localRotation = Quaternion.Euler(0, 90, 0);}transform.position = new Vector3(transform.position.x - movDis, transform.position.y, transform.position.z);lastIns = 1;}break;
+            case "S": {if(lastIns!=2){transform.localRotation = Quaternion.Euler(0, 0, 0);}transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movDis);lastIns = 2;}break;
+            case "W": {if(lastIns!=2){transform.localRotation = Quaternion.Euler(0, 0, 0);}transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movDis);lastIns = 3;}break;
         }
         nowIndex ++;
     }
