@@ -8,6 +8,8 @@ public class CustomerPick : MonoBehaviour
 
     public string[] toBuy;
 
+    public NeedItemUI niu;
+
     private Collider coll;
 
     public void updateToBuy(){
@@ -20,7 +22,17 @@ public class CustomerPick : MonoBehaviour
     {
         updateToBuy();
         coll = GetComponent<Collider>();
-        Debug.Log("Arraylist:"+arrayList.Contains("Chip"));
+    }
+
+    int returnIndex(string tag){
+        for(int i=0; i<arrayList.Count; i++){
+            if(arrayList[i].Equals(tag)){
+                Debug.Log("Return"+i);
+                arrayList[i] = "OHHHH";
+                return i;
+            }
+        }
+        return -1;
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,7 +41,9 @@ public class CustomerPick : MonoBehaviour
         if(arrayList.Contains(tag)){
             Debug.Log("Get good!");
             other.transform.parent.GetComponent<Animator>().Play("Kill");
-            arrayList.Remove(tag);
+            niu.changeColor(returnIndex(tag));
+            // returnIndex(tag);
+            // arrayList.Remove(tag);
         }else{
             Debug.Log("This good is not needed!");
         }
