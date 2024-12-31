@@ -9,16 +9,10 @@ public class NeedItemUI : MonoBehaviour
 
     public Sprite[] sprites;
 
-    void Start()
-    {
-        if(sprites.Length < 3){
-            if(sprites.Length == 1){
-                images[1].gameObject.SetActive(false);
-            }
-            images[2].gameObject.SetActive(false);
-        }
-        for(int i=0; i<sprites.Length; i++){
-            images[i].sprite = sprites[i];
+    public void updateNIU(int[] ints){
+        for(int i=0; i<ints.Length; i++){
+            images[i].gameObject.SetActive(true);
+            images[i].sprite = sprites[ints[i]];
         }
     }
 

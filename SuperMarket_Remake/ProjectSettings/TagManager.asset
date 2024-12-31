@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Customer
   - Chip
+  - Drink
+  - Porridge
   layers:
   - Default
   - TransparentFX
