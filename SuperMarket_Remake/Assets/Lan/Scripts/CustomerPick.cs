@@ -8,6 +8,8 @@ public class CustomerPick : MonoBehaviour
 
     public string[] toBuy;
 
+    public int[] toBuyInt;
+
     public NeedItemUI niu;
 
     private Collider coll;
@@ -22,6 +24,7 @@ public class CustomerPick : MonoBehaviour
     {
         updateToBuy();
         coll = GetComponent<Collider>();
+        niu.updateNIU(toBuyInt);
     }
 
     int returnIndex(string tag){

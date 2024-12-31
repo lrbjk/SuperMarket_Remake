@@ -8,7 +8,7 @@ public class GoodKill : MonoBehaviour
     public GameObject vfx;
 
     public void BeforeKill(){
-        coll.enabled = false;
+        // coll.enabled = false;
         Instantiate(vfx, coll.transform.position, Quaternion.identity);
         coll.transform.GetChild(0).gameObject.SetActive(true);
     }
