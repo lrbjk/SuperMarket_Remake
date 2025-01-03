@@ -627,9 +627,7 @@ MonoBehaviour:
   - S
   - S
   - S
-  - A
-  - A
-  - A
+  - S
   movTime: 0.5
   canMove: 0
 --- !u!54 &3055768385185840823

@@ -8,6 +8,8 @@ public class CustomerFactory : MonoBehaviour
 
     public float CD;
 
+    public string[] userNeed;
+
     public int customerCount;
 
     private float _CD;
@@ -16,6 +18,13 @@ public class CustomerFactory : MonoBehaviour
     void Start()
     {
         _CD = CD;
+        ClearCustomerNeed();
+    }
+
+    // Clear the state of customerNeed, because they are static variables.
+    void ClearCustomerNeed(){
+        CustomerNeed.currentNeed = "";
+        CustomerNeed.lastNeed = "";
     }
 
     // Update is called once per frame
@@ -33,7 +42,19 @@ public class CustomerFactory : MonoBehaviour
     }
 
     void InvokeNewCustomer(){
+        // Get a random integer between 0 and customer.Length - 1
         int r = Random.Range(0, gameObjects.Length);
+
+        // Update the currentNeed and lastNeed
+        // If the customer is not the first customer, update the lastNeed
+        if(CustomerNeed.currentNeed != ""){
+            CustomerNeed.lastNeed = CustomerNeed.currentNeed;
+        }
+
+        // Update the currentNeed
+        CustomerNeed.currentNeed = userNeed[r];
+
+        // Generate the customer
         Instantiate(gameObjects[r], transform.position, Quaternion.identity);
     }
 }
