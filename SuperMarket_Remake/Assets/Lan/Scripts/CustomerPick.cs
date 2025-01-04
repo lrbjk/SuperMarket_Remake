@@ -31,7 +31,7 @@ public class CustomerPick : MonoBehaviour
         for(int i=0; i<arrayList.Count; i++){
             if(arrayList[i].Equals(tag)){
                 Debug.Log("Return"+i);
-                arrayList[i] = "OHHHH";
+                arrayList[i] = "OHHHH"+arrayList[i];
                 return i;
             }
         }
@@ -42,14 +42,15 @@ public class CustomerPick : MonoBehaviour
     {
         string tag = other.gameObject.tag;
         if(arrayList.Contains(tag)){
-            Debug.Log("Get good!");
             other.transform.parent.GetComponent<Animator>().Play("Kill");
             niu.changeColor(returnIndex(tag));
             // returnIndex(tag);
             // arrayList.Remove(tag);
-        }else{
-            Debug.Log("This good is not needed!");
         }
+    }
+
+    public float CheckOut(){
+        return  CustomerNeed.Calculate(arrayList);
     }
 
     // void OnTriggerStay(Collider other)
