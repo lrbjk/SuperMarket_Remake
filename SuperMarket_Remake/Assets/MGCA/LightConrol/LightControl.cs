@@ -17,8 +17,14 @@ public class LightControl : MonoBehaviour
     public Text dateText;
     public GameObject changeDateButton;
 
+    private  GameObject targetObject;// 找到目标物体
+    private CustomerFactory Customer;// 获取脚本组件
+    
+
     void Start()
     {
+        targetObject = GameObject.Find("CustomerGenerator");
+        Customer = targetObject.GetComponent<CustomerFactory>();
         currentDate = 0;
         rotationAngle = dayAngle + 0.01f;
         changeDateButton.SetActive(false);
@@ -87,15 +93,19 @@ public class LightControl : MonoBehaviour
     private System.Collections.IEnumerator FadeOut(float duration)
     {
         dateText.CrossFadeAlpha(0f, duration, true);
+        Customer.customerCount = 5;
         yield return new WaitForSeconds(duration);
     }
 
     public  void OnClick()
     {
-        isNextDateTriggered = true;
-        currentDate += 1;
-        dateText.text = "Day: " + currentDate;
-        changeDateButton.SetActive(false);
+        if (Customer.customerCount < 0.01)
+        {
+            isNextDateTriggered = true;
+            currentDate += 1;
+            dateText.text = "Day: " + currentDate;
+            changeDateButton.SetActive(false);
+        }
     }
 
 }
