@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomerPick : MonoBehaviour
 {
-    private ArrayList arrayList = new ArrayList();
+    private ArrayList arrayList;
 
     public string[] toBuy;
 
@@ -15,9 +15,10 @@ public class CustomerPick : MonoBehaviour
     private Collider coll;
 
     public void updateToBuy(){
-        for(int i=0; i<toBuy.Length; i++){
-            arrayList.Add(toBuy[i]);
-        }
+        //for(int i=0; i<toBuy.Length; i++){
+        //    arrayList.Add(toBuy[i]);
+        //}
+        arrayList = new ArrayList(toBuy);
     }
 
     void Start()
