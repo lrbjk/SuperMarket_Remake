@@ -2,7 +2,7 @@
 
 public class BuyingButton : MonoBehaviour
 {
-    public Canvas shopCanvas; 
+    public GameObject shopCanvas; 
 
     void Start()
     {
@@ -13,14 +13,14 @@ public class BuyingButton : MonoBehaviour
         }
 
         
-        shopCanvas.gameObject.SetActive(false);
+        shopCanvas.SetActive(false);
     }
 
     public void OnBuyingButtonClick()
     {
         if (shopCanvas != null)
         {
-            shopCanvas.gameObject.SetActive(true); 
+            shopCanvas.SetActive(true); 
         }
         else
         {

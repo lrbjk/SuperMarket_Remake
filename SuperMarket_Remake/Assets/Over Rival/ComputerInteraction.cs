@@ -3,18 +3,22 @@ using UnityEngine.UI;
 
 public class ComputerInteraction : MonoBehaviour
 {
-    public Canvas shopCanvas; 
-    public Button buyBottleButton; 
-    public Button buyBookButton; 
-    public Button buyFoodButton; 
-    public Button commitButton; 
-    public Button quitButton; 
-    public Text cartSummaryText; 
+    public GameObject shopCanvas;
+    public Button buyBottleButton;
+    public Button buyBookButton;
+    public Button buyFoodButton;
+    public Button commitButton;
+    public Button quitButton;
+    public Text cartSummaryText;
+
+    public GameObject drinkPrefab;   
+    public GameObject porridgePrefab; 
+    public GameObject chipPrefab;    
 
     private bool isShopOpen = false;
-    private int bottleCount = 0; 
-    private int bookCount = 0;   
-    private int foodCount = 0; 
+    private int bottleCount = 0;
+    private int bookCount = 0;
+    private int foodCount = 0;
 
     void Start()
     {
@@ -24,7 +28,13 @@ public class ComputerInteraction : MonoBehaviour
             return;
         }
 
-        shopCanvas.gameObject.SetActive(false); 
+        if (drinkPrefab == null || porridgePrefab == null || chipPrefab == null)
+        {
+            Debug.LogError("One or more item prefabs are not assigned in ComputerInteraction.");
+            return;
+        }
+
+        shopCanvas.SetActive(false);
 
         buyBottleButton.onClick.AddListener(() => AddToCart("bottle"));
         buyBookButton.onClick.AddListener(() => AddToCart("book"));
@@ -32,7 +42,6 @@ public class ComputerInteraction : MonoBehaviour
         commitButton.onClick.AddListener(CommitPurchase);
         quitButton.onClick.AddListener(CloseShop);
 
-      
         GameManager.InitializeBalanceText(GameObject.Find("BalanceText").GetComponent<Text>());
 
         UpdateCartSummary();
@@ -40,8 +49,7 @@ public class ComputerInteraction : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) 
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -57,14 +65,14 @@ public class ComputerInteraction : MonoBehaviour
     void OpenShop()
     {
         isShopOpen = true;
-        shopCanvas.gameObject.SetActive(true);
+        shopCanvas.SetActive(true);
         UpdateCartSummary();
     }
 
     public void CloseShop()
     {
         isShopOpen = false;
-        shopCanvas.gameObject.SetActive(false);
+        shopCanvas.SetActive(false);
     }
 
     void AddToCart(string item)
@@ -84,17 +92,21 @@ public class ComputerInteraction : MonoBehaviour
                 Debug.Log($"Added food to cart. Total: {foodCount}");
                 break;
         }
-        UpdateCartSummary(); 
+        UpdateCartSummary();
     }
 
     void CommitPurchase()
     {
-        int totalCost = bottleCount + bookCount + foodCount; 
+        int totalCost = bottleCount + bookCount + foodCount;
 
         if (GameManager.Balance >= totalCost)
         {
-            GameManager.Balance -= totalCost; 
-            GameManager.UpdateBalanceUI(); 
+            GameManager.Balance -= totalCost;
+            GameManager.UpdateBalanceUI();
+
+            GenerateObjects(bottleCount, drinkPrefab);
+            GenerateObjects(bookCount, porridgePrefab);
+            GenerateObjects(foodCount, chipPrefab);
 
             bottleCount = 0;
             bookCount = 0;
@@ -112,5 +124,19 @@ public class ComputerInteraction : MonoBehaviour
     void UpdateCartSummary()
     {
         cartSummaryText.text = $"Cart Summary:\nBottles: {bottleCount}\nBooks: {bookCount}\nFood: {foodCount}";
+    }
+
+    void GenerateObjects(int count, GameObject prefab)
+    {
+        if (count <= 0 || prefab == null) return;
+
+        for (int i = 0; i < count; i++)
+        {
+           
+            Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2 + new Vector3(i * 0.5f, 0, 0); // 间隔排列
+
+       
+            Instantiate(prefab, spawnPosition, Quaternion.identity);
+        }
     }
 }
