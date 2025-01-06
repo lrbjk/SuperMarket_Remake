@@ -70,12 +70,10 @@
                 
                 float3 worldViewDir = normalize(UnityWorldSpaceViewDir(i.posWS));
                 float3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.posWS));
-                worldLightDir.y = worldLightDir.y>0?worldLightDir.y:-worldLightDir.y;
-                float lightIntensity = lerp(1.2,0.8,(worldLightDir.y+1)*0.5); 
                 float3 halfDir = normalize(worldViewDir + worldLightDir);
                 float NdotL = dot(i.normal,worldLightDir);
                 UNITY_LIGHT_ATTENUATION(atten,i,i.posWS);
-                atten = facing>0?(atten + 0.4):1;
+                atten = lerp(0.2,saturate(atten + 0.8),clamp(worldLightDir.y,0,1));
 
                 //--------------------------------------------------------
                 
@@ -161,11 +159,8 @@
 
                 
                 float3 worldViewDir = normalize(UnityWorldSpaceViewDir(i.posWS));
-                worldLightDir.y = worldLightDir.y>0?worldLightDir.y:-worldLightDir.y;
-                float lightIntensity = lerp(1.2,0.8,(worldLightDir.y+1)*0.5); 
                 float3 halfDir = normalize(worldViewDir + worldLightDir);
                 float NdotL = dot(i.normal,worldLightDir);
-                atten = facing>0?(atten):1;
 
                 //--------------------------------------------------------
                 
@@ -176,7 +171,7 @@
 
                 half4 finalColor;
                 finalColor.rgb = clamp(Diffuse + Specular,0.2,1);
-                finalColor.rgb *= atten;
+                finalColor.rgb *= atten * albedo;
                 
                 return finalColor;
                 

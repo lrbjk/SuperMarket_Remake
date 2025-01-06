@@ -177,12 +177,17 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\GvrCursorHelper.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+     <Compile Include="Assets\Lan\Scripts\CheckOut.cs" />
+     <Compile Include="Assets\Lan\Scripts\CustomerFactory.cs" />
      <Compile Include="Assets\Lan\Scripts\CustomerMov.cs" />
+     <Compile Include="Assets\Lan\Scripts\CustomerNeed.cs" />
      <Compile Include="Assets\Lan\Scripts\CustomerPick.cs" />
      <Compile Include="Assets\Lan\Scripts\GoodKill.cs" />
      <Compile Include="Assets\Lan\Scripts\NeedItemUI.cs" />
      <Compile Include="Assets\Lan\Scripts\SelfKill.cs" />
+     <Compile Include="Assets\Lan\Scripts\TemplateUI.cs" />
      <Compile Include="Assets\MGCA\LightConrol\LightControl.cs" />
+     <Compile Include="Assets\MGCA\Script\DayControl.cs" />
      <Compile Include="Assets\MGCA\Shader\BrightnessSaturationAndContrast.cs" />
      <Compile Include="Assets\MGCA\Shader\ImageEffect.cs" />
      <Compile Include="Assets\MGCA\Shader\post_suface.cs" />

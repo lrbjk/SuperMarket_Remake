@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/NewSupermarketLan 1.unity
+- path: Assets/Lan/AgainNewSupermarket.unity
   isLoaded: 1
   isActive: 1
