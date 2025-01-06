@@ -32,6 +32,7 @@
             #pragma target 3.0
 
             sampler2D _MainTex;
+            float4 _MainTex_ST;
             sampler2D _PBR;
             sampler2D _AO;
             sampler2D _Alpha;
@@ -55,6 +56,7 @@
             {
                 v2f o;
                 o.uv = v.texcoord;
+                TRANSFORM_TEX(o.uv,_MainTex);
                 o.pos = UnityObjectToClipPos(v.vertex);
                 float3 normalWS = normalize(UnityObjectToWorldNormal(v.normal));
                 o.posWS = mul(unity_ObjectToWorld,v.vertex); 
@@ -108,6 +110,7 @@
             #pragma multi_compile_fwdadd
 
             sampler2D _MainTex;
+            float4 _MainTex_ST;
             sampler2D _PBR;
             sampler2D _AO;
             sampler2D _Alpha;
@@ -130,6 +133,7 @@
             {
                 v2f o;
                 o.uv = v.texcoord;
+                TRANSFORM_TEX(o.uv,_MainTex);
                 o.pos = UnityObjectToClipPos(v.vertex);
                 float3 normalWS = normalize(UnityObjectToWorldNormal(v.normal));
                 o.posWS = mul(unity_ObjectToWorld,v.vertex); 
