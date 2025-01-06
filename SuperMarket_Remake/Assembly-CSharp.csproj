@@ -225,6 +225,7 @@
      <None Include="Assets\ModernSupermarket\Shaders\Label.shader" />
      <None Include="Assets\ModernSupermarket\Shaders\Tesselation.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Cardboard.xml" />
+     <None Include="Assets\MGCA\Shader\GuanggaoPai.shader" />
      <None Include="Assets\MGCA\Shader\SkyBox.shader" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>D:/unity/SuperMarket_Remake/SuperMarket_Remake/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
