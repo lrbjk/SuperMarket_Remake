@@ -182,8 +182,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1349660800898381557, guid: 410e751e3af1dd64e8072befd1416316,
-            type: 3}
+        - m_Target: {fileID: 8924117426692537189}
           m_MethodName: PickUp
           m_Mode: 1
           m_Arguments:
@@ -198,8 +197,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1349660800898381557, guid: 410e751e3af1dd64e8072befd1416316,
-            type: 3}
+        - m_Target: {fileID: 8924117426692537189}
           m_MethodName: Release
           m_Mode: 1
           m_Arguments:

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6030678334542286499}
   - component: {fileID: 6214928189264774353}
   - component: {fileID: 6981231602258701863}
+  - component: {fileID: 7066490306377634108}
   m_Layer: 0
   m_Name: "\u7403\u4F53"
   m_TagString: Chip
@@ -129,8 +130,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1349660800898381557, guid: 410e751e3af1dd64e8072befd1416316,
-            type: 3}
+        - m_Target: {fileID: 7066490306377634108}
           m_MethodName: PickUp
           m_Mode: 1
           m_Arguments:
@@ -145,8 +145,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1349660800898381557, guid: 410e751e3af1dd64e8072befd1416316,
-            type: 3}
+        - m_Target: {fileID: 7066490306377634108}
           m_MethodName: Release
           m_Mode: 1
           m_Arguments:
@@ -158,6 +157,19 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   delegates: []
+--- !u!114 &7066490306377634108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773158869907325491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787b84fb91451d94db6563c076b5a001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &6146967102384168250
 GameObject:
   m_ObjectHideFlags: 0

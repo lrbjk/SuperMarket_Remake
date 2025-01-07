@@ -22,17 +22,17 @@ public class ComputerInteraction : MonoBehaviour
 
     void Start()
     {
-        if (shopCanvas == null || buyBottleButton == null || buyBookButton == null || buyFoodButton == null || commitButton == null || quitButton == null || cartSummaryText == null)
-        {
-            Debug.LogError("One or more UI components are not assigned in ComputerInteraction.");
-            return;
-        }
+        //if (shopCanvas == null || buyBottleButton == null || buyBookButton == null || buyFoodButton == null || commitButton == null || quitButton == null || cartSummaryText == null)
+        //{
+        //    Debug.LogError("One or more UI components are not assigned in ComputerInteraction.");
+        //    return;
+        //}
 
-        if (drinkPrefab == null || porridgePrefab == null || chipPrefab == null)
-        {
-            Debug.LogError("One or more item prefabs are not assigned in ComputerInteraction.");
-            return;
-        }
+        //if (drinkPrefab == null || porridgePrefab == null || chipPrefab == null)
+        //{
+        //    Debug.LogError("One or more item prefabs are not assigned in ComputerInteraction.");
+        //    return;
+        //}
 
         shopCanvas.SetActive(false);
 
