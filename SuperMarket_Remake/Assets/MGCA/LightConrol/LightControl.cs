@@ -44,11 +44,11 @@ public class LightControl : MonoBehaviour
         {
             isNextDateTriggered = false;
             changeDay(dayChangeSpeed);
-            Debug.Log("Day: "+rotationAngle);
+
         }
         else if(isNextDateTriggered)
         {
-            Debug.Log("Night: "+rotationAngle);
+      
             rotationAngle = Mathf.Repeat(rotationAngle, 360f);
             changeDay(nightChangeSpeed);
             if (!dateText.gameObject.activeInHierarchy)
