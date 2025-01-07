@@ -123,7 +123,7 @@ public class ComputerInteraction : MonoBehaviour
 
     void UpdateCartSummary()
     {
-        cartSummaryText.text = $"Cart Summary:\nBottles: {bottleCount}\nBooks: {bookCount}\nFood: {foodCount}";
+        cartSummaryText.text = $"Cart Summary:\Basketballs: {bottleCount}\nDrinks: {bookCount}\nDices: {foodCount}";
     }
 
     void GenerateObjects(int count, GameObject prefab)
