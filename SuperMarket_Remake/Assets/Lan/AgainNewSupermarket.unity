@@ -599,12 +599,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248435900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3048539a8e3789843a9862dd31044755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balanceText: {fileID: 0}
+  balanceText: {fileID: 66904673}
 --- !u!1 &324888423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2027,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Book
+  m_Text: Dice
 --- !u!222 &932228627
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3039,7 +3039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bottle
+  m_Text: Cola
 --- !u!222 &1459097750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3831,7 +3831,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Food
+  m_Text: Basketball
 --- !u!222 &1941281731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -65114,7 +65114,6 @@ GameObject:
   - component: {fileID: 6025477116016490976}
   - component: {fileID: 6025477116015687954}
   - component: {fileID: 6025477116014722898}
-  - component: {fileID: 6025477116016979393}
   m_Layer: 0
   m_Name: Desktop_02
   m_TagString: Untagged
@@ -65122,28 +65121,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6025477116016979393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6025477116016979392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a39e13c9703934589d0126c8bd0256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopCanvas: {fileID: 0}
-  buyBottleButton: {fileID: 0}
-  buyBookButton: {fileID: 0}
-  buyFoodButton: {fileID: 0}
-  commitButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  cartSummaryText: {fileID: 0}
-  drinkPrefab: {fileID: 0}
-  porridgePrefab: {fileID: 0}
-  chipPrefab: {fileID: 0}
 --- !u!1 &6025477116016979394
 GameObject:
   m_ObjectHideFlags: 0
